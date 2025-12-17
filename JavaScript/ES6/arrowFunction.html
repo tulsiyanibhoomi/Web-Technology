@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Arrow Functions</title>
+</head>
+<body>
+	<h1>Arrow Functions</h1>
+	<script type="text/javascript">
+		//Normal
+		function add(a,b){
+			console.log(a+"+"+b+"="+(a+b));
+		}
+		//Arrow
+		const add2 = (a,b) => {
+			console.log(a+"+"+b+"="+(a+b));
+		}
+		add(1,2);
+		add2(3,4);
+		//Anonymous
+		(function (a=5,b=6){
+			console.log(a+"+"+b+"="+(a+b));
+		})();
+	</script>
+</body>
+</html>

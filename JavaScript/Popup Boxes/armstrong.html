@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Armstrong</title>
+</head>
+<body>
+	<h1>Armstrong Number Detector</h1>
+	<script type="text/javascript">
+		let n=prompt("Enter any number: ");
+		let b=n;
+		let sum=0;
+		while(b!=0){
+			rem=b%10;
+			sum+=Math.pow(rem,3);
+			b=parseInt(b/10);
+		}
+		if(n==sum){
+			alert(n+" is an Armstrong Number");
+		}else{
+			alert(n+" is Not an Armstrong Number");
+		}
+	</script>
+</body>
+</html>

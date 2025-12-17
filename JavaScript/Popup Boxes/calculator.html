@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Calculator</title>
+</head>
+<body>
+	<h1>Calculator</h1>
+	<script type="text/javascript">
+		let a=prompt("Enter value of a: ");
+		let c=prompt("Enter any sign(+,-,*,/,%): ");
+		let b=prompt("Enter value of b: ");
+		switch(c){
+			case '+':alert("Addition: "+a+"+"+b+"="+(Number(a)+Number(b)));
+				break; 
+			case '-':alert("Subtraction: "+a+"-"+b+"="+(Number(a)-Number(b)));
+				break; 
+			case '*':alert("Multiplication: "+a+"*"+b+"="+(Number(a)*Number(b)));
+				break; 
+			case '/':
+				if(b!=0){
+					alert("Division: "+a+"+"+b+"="+(Number(a)+Number(b)));
+				}else{
+					alert("Division by 0 Not Possible");
+				}
+				break; 
+			case '%':alert("Modulus: "+a+"+"+b+"="+(Number(a)+Number(b)));
+				break; 
+			default: alert("Invalid Input");
+		}
+	</script>
+</body>
+</html>

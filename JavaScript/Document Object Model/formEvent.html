@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Form</title>
+</head>
+<body>
+	<h1>Form Events</h1>
+	<form onsubmit="return validate()" onreset="reset()">
+		<label for="name">Username: </label>
+		<input type="text" name="name" id="name">
+		<label for="password"><br>Password: </label>
+		<input type="password" name="password" id="password"><br>
+		<input type="submit" value="Submit"><br>
+		<input type="reset" value="Reset"><br>
+		<span id="msg"></span>
+		<br><br><br>
+	</form>
+	<label for="choose">Choose your country: </label>
+	<select onchange="change()" name="choose" id="country">
+		<option>India</option>
+		<option>USA</option>
+		<option>China</option>
+	</select><br>
+	<span id="msg2"></span><br><br><br>
+	<label for="search">Search:</label>
+   	<input type="text" id="search" oninput="handleInput()">
+   	<div id="message" style="border: 1px solid #ddd;padding: 10px; background-color: #f9f9f9; font-size: 14px; width: 30%;"></div>
+   	<label for="username">Name:</label>
+   	<input type="text" id="username" onfocus="handleFocus()" onblur="handleBlur()">
+   	<p id= "output"></p>
+	<script type="text/javascript">
+		function validate(){
+			var username=document.getElementById('name').value;
+			var password=document.getElementById('password').value;
+			if (username===""||password===""){
+				document.getElementById('msg').innerHTML="Please fill in all fields";
+				return false;
+			}
+			document.getElementById('msg').innerHTML="Form submitted!";
+			return false;
+		}
+		function change(){
+			var country=document.getElementById('country').value;
+			document.getElementById('msg2').innerHTML="Selected country: "+country;
+		}
+		function reset(){
+			document.getElementById('msg2').innerHTML="Selected country";
+		}
+      	function handleInput() {
+      		var messageElement = document.getElementById('message');
+         	var searchInput = document.getElementById('search').value;
+         	messageElement.innerHTML+="Search input: " + searchInput+'<br>';
+      	}
+      	const output = document.getElementById('output');
+      	function handleFocus() {
+        	output.innerHTML += "Input has focus" + "<br>";
+      	}
+      	function handleBlur() {
+         	output.innerHTML += "Input lost focus" + "<br>";
+      	}
+	</script>
+</body>
+</html>

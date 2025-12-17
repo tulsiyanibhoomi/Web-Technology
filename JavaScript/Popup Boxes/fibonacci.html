@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Fibonacci</title>
+</head>
+<body>
+	<h1>Fibonacci Series</h1>
+	<script type="text/javascript">
+		let n=prompt("How many numbers to be printed? (Atleast 2)");
+		if(n<2){
+			alert("Invalid Input");
+		}else{
+			let x=0;
+			let y=1;
+			document.write(x+" ");
+			document.write(y+" ");
+			for(i=3;i<=n;i++){
+				z=parseInt(x)+parseInt(y);
+				document.write(z+" ");
+				x=y;
+				y=z;
+			}
+		}
+	</script>
+</body>
+</html>

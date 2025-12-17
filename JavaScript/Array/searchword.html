@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Search Word</title>
+</head>
+<body>
+	<h1>Search Word in Sentence</h1>
+	<script type="text/javascript">
+		let a=prompt("Enter a sentence: ");
+		let b=prompt("Enter any word: ");
+		arr=a.split(" ");
+		document.write("Sentence: "+a);
+		document.write("<br/>Word to Search: "+b+"<br/>");
+		let index=0;
+		for(i=0;i<arr.length;i++){
+			if(b==arr[i]){
+				break;
+			}
+			index+=arr[i].length+1;
+		}
+		document.write("Index of word: "+index);
+	</script>
+</body>
+</html>

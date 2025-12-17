@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mouse</title>
+</head>
+<body>
+	<h1 onmouseover="colourChange()" onmouseout="colourBack()" id="heading">Mouse Events</h1>
+	<button id="mouse" style="padding: 15px;" onclick="fndTime()">Event</button>
+	<span id="dateTime"></span>
+	<div id="event" style="font-size: 15px; margin-top: 10px;"></div>
+	<button id="red" style="padding: 15px;" onclick="redBg()">Red</button>
+	<button id="green" style="padding: 15px;" onclick="greenBg()">Green</button>
+	<script type="text/javascript">
+		mouse=document.getElementById('mouse');
+		event=document.getElementById('event');
+		heading=document.getElementById('heading');
+		dateTime=document.getElementById('dateTime');
+		function colourChange(){
+			heading.style.color="yellow";
+		}
+		function fndTime(){
+			const d=new Date();
+			dateTime.innerHTML=d;
+		}
+		function redBg(){
+			document.body.style.backgroundColor="red";
+		}
+		function greenBg(){
+			document.body.style.backgroundColor="green";
+		}
+		function colourBack(){
+			heading.style.color="black";
+		}
+		mouse.addEventListener(
+			'click',()=>{
+				event.innerHTML="Mouse Clicked"
+				mouse.style.backgroundColor="green"
+			}
+		);
+		mouse.addEventListener(
+			'dblclick',()=>{
+				event.innerHTML="Mouse Double Clicked"
+				mouse.style.backgroundColor="yellow"
+			}
+		);
+		mouse.addEventListener(
+			'mouseout',()=>{
+				event.innerHTML="Mouse Out"
+				mouse.style.backgroundColor="white"
+			}
+		);
+		mouse.addEventListener(
+			'mouseenter',()=>{
+				event.innerHTML="Mouse In"
+				mouse.style.backgroundColor="lightblue"
+				mouse.style.cursor="pointer"
+			}
+		);
+		mouse.addEventListener(
+			'mousemove',()=>{
+				event.innerHTML="Mouse Moving"
+				mouse.style.backgroundColor="red"
+			}
+		);
+	</script>
+</body>
+</html>

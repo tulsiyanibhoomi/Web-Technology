@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CRUD</title>
+</head>
+<body>
+	<div style="float: left; width: 50%;">
+		<h1>CRUD Operations on Array</h1>
+		<label style="font-size: 18px;">Enter name: </label>
+		<input type="text" name="name" id="name">
+		<button onclick="add()" id="modify">Add</button>
+		<span id="warn"></span>
+	</div>
+	<div style="float: left; width: 50%;">
+		<h1>Data</h1>
+		<div id="data"></div>
+	</div>
+	<script type="text/javascript">
+		students=['Darshan','University','College','Rajkot','Gujarat'];
+		show();
+		function show(){
+			temp=document.getElementById('data');
+			tempString="";
+			tempString+="<table border='1'>";
+			for(i=0;i<students.length;i++){
+				tempString+="<tr>";
+				tempString+="<td style='padding: 5px;'>"+students[i]+"</td>";
+				tempString+="<td style='padding: 5px;'><button onclick='edit("+i+")'>Edit</button></td>";
+				tempString+="<td style='padding: 5px;'><button onclick='remove("+i+")'>Delete</button></td>";
+				tempString+="</tr>";
+			}
+			tempString+="</table>";
+			temp.innerHTML=tempString;
+		}
+		function remove(i){
+			students.splice(i,1);
+			show();
+		}
+		idToEdit=-1;
+		function edit(i){
+			document.getElementById('name').value=students[i];
+			document.getElementById('modify').innerHTML="Edit";
+			idToEdit=i;
+		}
+		function add(){
+			newData=document.getElementById('name').value;
+			if(newData==""){
+				document.getElementById('warn').innerHTML="Name can't be empty!";
+			}
+			else if(document.getElementById('modify').innerHTML=="Edit"){
+				console.log(i);
+				document.getElementById('warn').innerHTML="";
+				students[idToEdit]=document.getElementById('name').value;
+				document.getElementById('modify').innerHTML="Add";
+				idToEdit=-1;
+			}
+			else{
+				students.push(newData);
+				document.getElementById('warn').innerHTML="";
+			}
+			show();
+			document.getElementById('name').value='';
+		}
+	</script>
+</body>
+</html>

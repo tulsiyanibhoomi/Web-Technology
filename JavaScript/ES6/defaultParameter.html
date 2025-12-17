@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Default Parameter</title>
+</head>
+<body>
+	<h1>Default Parameter</h1>
+	<script type="text/javascript">
+		function show(a=3,b=4){
+			console.log(a,b);
+		}
+		show();
+		show(2);
+		show(undefined,5);
+		show(2,5);
+	</script>
+</body>
+</html>

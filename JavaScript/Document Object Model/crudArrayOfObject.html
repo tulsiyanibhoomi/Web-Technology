@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CRUD</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body style="padding: 10px;">
+	<div style="float: left; width: 50%;">
+		<h1>CRUD Operations on Array</h1>
+		<div style="font-size: 20px; margin-top: 20px; margin-bottom: 20px;">
+			<input type="radio" name="Fs" id="faculty" onchange="show()">Faculty<br>
+			<input type="radio" name="Fs" id="student" onchange="show()" checked>Student
+		</div>
+		<table>
+			<tr>
+				<td><label style="font-size: 18px;" id="one">Name: </label></td>
+				<td><input type="text" name="name" id="name"></td>
+			</tr>
+			<tr>
+				<td><label style="font-size: 18px;" id="two">Enrollment no: </label></td>
+				<td><input type="number" name=eno id="eno"></td>
+			</tr>
+			<tr>
+				<td><label style="font-size: 18px;" id="three">Branch: </label></td>
+				<td><input type="text" name="branch" id="branch"></td>
+			</tr>
+			<tr>
+				<td><label style="font-size: 18px;" id="four">Semester: </label></td>
+				<td><input type="number" name="sem" id="sem"></td>
+			</tr>
+		</table>
+		<button onclick="add()" id="modify" style="padding-left: 10px; padding-right: 10px; padding-top: 7px; padding-bottom: 7px; font-size: 20px; margin-top: 10px;">Add</button>
+		<div id="warn" style="color: red; margin-top: 15px;"></div>
+	</div>
+	<div style="float: left; width: 50%;">
+		<h1 id="head">Data</h1>
+		<div id="data"></div>
+	</div>
+	<script type="text/javascript">
+		students=[
+			{name: 'Bhoomi',
+			eno: 23010101275,
+			branch: 'CSE',
+			sem: 3},
+			{name: 'Komal',
+			eno: 23010101087,
+			branch: 'Civil',
+			sem: 4},
+			{name: 'Shreya',
+			eno: 23010101184,
+			branch: 'Mechanical',
+			sem: 3},
+			{name: 'Bhoomi',
+			eno: 23010101275,
+			branch: 'CSE',
+			sem: 3},
+			{name: 'Komal',
+			eno: 23010101087,
+			branch: 'Civil',
+			sem: 4},
+			{name: 'Shreya',
+			eno: 23010101184,
+			branch: 'Mechanical',
+			sem: 3}
+		];
+		faculty=[
+			{name: 'Arjun Bala',
+			mobile: 9825461532,
+			subject: 'Javascript',
+			ex: 10},
+			{name: 'Krunal Vyas',
+			mobile: 7521468352,
+			subject: 'Digital Fundamentals',
+			ex: 12},
+			{name: 'Pradyumansinh Jadeja',
+			mobile: 8452136981,
+			subject: 'Data Structures',
+			ex: 20},
+			{name: 'Arjun Bala',
+			mobile: 9825461532,
+			subject: 'Javascript',
+			ex: 10},
+			{name: 'Krunal Vyas',
+			mobile: 7521468352,
+			subject: 'Digital Fundamentals',
+			ex: 12},
+			{name: 'Pradyumansinh Jadeja',
+			mobile: 8452136981,
+			subject: 'Data Structures',
+			ex: 20}
+		];
+		show();
+		function show(){
+			if(document.getElementById('student').checked==true){
+				showStudent();
+				document.getElementById('two').innerHTML="Enrollment No: ";
+				document.getElementById('three').innerHTML="Branch: ";
+				document.getElementById('four').innerHTML="Semester: ";
+				document.getElementById('head').innerHTML="Students";
+			}
+			else{
+				showFaculty();
+				document.getElementById('two').innerHTML="Mobile: ";
+				document.getElementById('three').innerHTML="Subject: ";
+				document.getElementById('four').innerHTML="Experience: ";
+				document.getElementById('head').innerHTML="Faculty: ";
+			}
+		}
+		function showStudent(){
+			temp=document.getElementById('data');
+			tempString="";
+			tempString+="<div class='container-fluid'>";
+			tempString+="<div class='row'>";
+			for(i=0;i<students.length;i++){
+				tempString+="<div class='card col-6' style='width: 18rem;'>"
+				tempString+="<div class='card-body'>";
+    			tempString+="<h5 class='card-title'>"+students[i].name+"</h5>";
+    			tempString+="<h6 class='card-subtitle mb-2 text-body-secondary'>"+students[i].eno+"</h6>";
+    			tempString+="<p class='card-text'>Branch: "+students[i].branch+"</p>";
+    			tempString+="<p class='card-text'>Semester: "+students[i].sem+"</p>";
+    			tempString+="<button onclick='edit("+i+")'>Edit</button>";
+    			tempString+="<button onclick='remove("+i+")'>Delete</button>";
+  				tempString+="</div>";
+				tempString+="</div>";
+			}
+			tempString+="</div>";
+			tempString+="</div>";
+			temp.innerHTML=tempString;
+		}
+		function showFaculty(){
+			temp=document.getElementById('data');
+			tempString="";
+			tempString+="<div class='container-fluid'>";
+			tempString+="<div class='row'>";
+			for(i=0;i<faculty.length;i++){
+				tempString+="<div class='card col-6' style='width: 18rem;'>"
+				tempString+="<div class='card-body'>";
+    			tempString+="<h5 class='card-title'>"+faculty[i].name+"</h5>";
+    			tempString+="<h6 class='card-subtitle mb-2 text-body-secondary'>"+faculty[i].subject+"</h6>";
+    			tempString+="<p class='card-text'>Mobile: "+faculty[i].mobile+"</p>";
+    			tempString+="<p class='card-text'>Experience: "+faculty[i].ex+"+ years</p>";
+    			tempString+="<button onclick='edit("+i+")'>Edit</button>";
+    			tempString+="<button onclick='remove("+i+")'>Delete</button>";
+  				tempString+="</div>";
+				tempString+="</div>";
+			}
+			tempString+="</div>";
+			tempString+="</div>";
+			temp.innerHTML=tempString;
+		}
+		function remove(i){
+			if(document.getElementById('student').checked==true){
+				students.splice(i,1);
+			}
+			else{
+				faculty.splice(i,1);
+			}
+			show();
+		}
+		idToEdit=-1;
+		function edit(i){
+			if(document.getElementById('student').checked==true){
+				document.getElementById('name').value=students[i].name;
+				document.getElementById('eno').value=students[i].eno;
+				document.getElementById('branch').value=students[i].branch;
+				document.getElementById('sem').value=students[i].sem;
+			}
+			else{
+				document.getElementById('name').value=faculty[i].name;
+				document.getElementById('eno').value=faculty[i].mobile;
+				document.getElementById('branch').value=faculty[i].subject;
+				document.getElementById('sem').value=faculty[i].ex;
+			}
+			document.getElementById('modify').innerHTML="Edit";
+			idToEdit=i;
+		}
+		function add(){
+			newName=document.getElementById('name').value;
+			newEno=document.getElementById('eno').value;
+			newBranch=document.getElementById('branch').value;
+			newSem=document.getElementById('sem').value;
+			if(newName=="" || newEno=="" || newBranch=="" || newSem==""){
+				if(newName==""){
+					document.getElementById('name').style.border = "thin solid red";
+				}
+				if(newEno==""){
+					document.getElementById('eno').style.border = "thin solid red";
+				}
+				if(newBranch==""){
+					document.getElementById('branch').style.border = "thin solid red";
+				}
+				if(newSem==""){
+					document.getElementById('sem').style.border = "thin solid red";
+				}
+				document.getElementById('warn').innerHTML="Please fill in all the details";
+			}
+			else if(document.getElementById('modify').innerHTML=="Edit"){
+				document.getElementById('warn').innerHTML="";
+				if(document.getElementById('student').checked==true){
+					students[idToEdit].name=document.getElementById('name').value;
+					students[idToEdit].eno=document.getElementById('eno').value;
+					students[idToEdit].branch=document.getElementById('branch').value;
+					students[idToEdit].sem=document.getElementById('sem').value;
+				}
+				else{
+					faculty[idToEdit].name=document.getElementById('name').value;
+					faculty[idToEdit].mobile=document.getElementById('eno').value;
+					faculty[idToEdit].subject=document.getElementById('branch').value;
+					faculty[idToEdit].ex=document.getElementById('sem').value;
+				}
+				document.getElementById('modify').innerHTML="Add";
+				reset();
+				idToEdit=-1;
+			}
+			else{
+				if(document.getElementById('student').checked==true){
+					a={name: newName,
+					eno: newEno,
+					branch: newBranch,
+					sem: newSem}
+					students.push(a);
+				}
+				else{
+					a={name: newName,
+					mobile: newEno,
+					subject: newBranch,
+					ex: newSem}
+					faculty.push(a);
+				}
+				reset();
+			}
+			function reset(){
+				document.getElementById('name').value='';
+				document.getElementById('eno').value='';
+				document.getElementById('branch').value='';
+				document.getElementById('sem').value='';
+				document.getElementById('warn').innerHTML="";
+				document.getElementById('name').style.border = "";
+				document.getElementById('eno').style.border = "";
+				document.getElementById('branch').style.border = "";
+				document.getElementById('sem').style.border = "";
+			}
+			show();
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>let N var</title>
+</head>
+<body>
+	<h1>Difference between let and var</h1>
+	<script type="text/javascript">
+		function display(){			
+			if(true){
+				const d=50;
+				let a=3;
+				var b=4;
+				c=5;
+				console.log("a(if): "+a);
+				console.log("b(if): "+b);
+				console.log("c(if): "+c);
+			}
+			//console.log("a(function): "+a); --Throw an error
+			console.log("b(function): "+b);
+			console.log("c(function): "+c);
+		}
+		display();
+		//console.log("a(global): "+a); --Throw an error
+		//console.log("b(global): "+b); --Throw an error
+		console.log("c(global): "+c);
+	</script>
+</body>
+</html>

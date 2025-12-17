@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Students</title>
+</head>
+<body>
+	<h1>Students stored in Array</h1>
+	<script type="text/javascript">
+		studentArray=[
+		{
+			"name": "Max West",
+			"age": 31993,
+			"marks": 92344,
+			"address": "West Darrel",
+			"id": "1"
+		},
+		{
+			"name": "Patti Ward",
+			"age": 70327,
+			"marks": 84546,
+			"address": "Sauerstad",
+			"id": "2"
+		},
+		{
+			"name": "Angie Fisher",
+			"age": 82699,
+			"marks": 62796,
+			"address": "Borerfort",
+			"id": "3"
+		},
+		{
+			"name": "Rita Romaguera Sr.",
+			"age": 37464,
+			"marks": 9647,
+			"address": "Smithtown",
+			"id": "4"
+		},
+		{
+			"name": "Isaac Hansen",
+			"age": 65935,
+			"marks": 36923,
+			"address": "South Johnfield",
+			"id": "5"
+		},
+		{
+			"name": "Patty Kautzer",
+			"age": 85139,
+			"marks": 106,
+			"address": "Kshlerinton",
+			"id": "6"
+		},
+		{
+			"name": "Willie Marvin",
+			"age": 2918,
+			"marks": 33360,
+			"address": "East Deionville",
+			"id": "7"
+		},
+		{
+			"name": "Sheldon Tremblay",
+			"age": 91810,
+			"marks": 90368,
+			"address": "New Ned",
+			"id": "8"
+		},
+		{
+			"name": "Mattie Waelchi",
+			"age": 74883,
+			"marks": 40750,
+			"address": "Lake Laverne",
+			"id": "9"
+		},
+		{
+			"name": "Ms. Jimmy Runte",
+			"age": 44914,
+			"marks": 46452,
+			"address": "Einoborough",
+			"id": "10"
+		}
+		];
+		document.write("<table border=1>");
+		for(i=0;i<10;i++){
+			document.write("<tr>");
+			document.write("<td>"+studentArray[i].id+"</td>");
+			document.write("<td>"+studentArray[i].name+"</td>");
+			document.write("<td>"+studentArray[i].age+"</td>");
+			document.write("<td>"+studentArray[i].marks+"</td>");
+			document.write("<td>"+studentArray[i].address+"</td>");
+			document.write("</tr>");
+		}
+		document.write("</table>");
+	</script>
+</body>
+</html>

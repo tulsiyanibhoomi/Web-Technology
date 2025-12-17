@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Change Property</title>
+</head>
+<body>
+	<h1>Change Propeties of HTML Elements</h1>
+	<input type="text" name="name" id="input">
+	<button id="change" onclick="change()">Toggle</button>
+	<script type="text/javascript">
+		function change(){
+			input=document.getElementById('input');
+			if(input.type=="text"){
+				input.type="date";
+			}else{
+				input.type="text";
+			}
+		}
+	</script>
+</body>
+</html>

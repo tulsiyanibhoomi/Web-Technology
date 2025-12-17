@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bubble Sort</title>
+</head>
+<body>
+	<h1>Bubble Sort</h1>
+	<script type="text/javascript">
+		let n=parseInt(prompt("Enter no. of elements in array: "));
+		var arr=[];
+		for(i=0;i<n;i++){
+			arr[i]=parseInt(prompt("Enter element arr["+i+"]: "));
+		}
+		document.write("Array: ");
+		for(i=0;i<n;i++){
+			document.write(arr[i]+" ");
+		}
+		for(i=0;i<n;i++){
+			for(j=0;j<n-i-1;j++){
+				if(arr[j]>arr[j+1]){
+					let temp=arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp;
+				}
+			}
+		}
+		document.write("<br/>Sorted Array: ");
+		for(i=0;i<n;i++){
+			document.write(arr[i]+" ");
+		}
+	</script>
+</body>
+</html>

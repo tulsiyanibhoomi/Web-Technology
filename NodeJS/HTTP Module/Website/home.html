@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg bg-dark px-5">
+		<div class="container-fluid">
+			<a class="navbar-brand text-secondary" href="#">Project name</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0 fs-4">
+					<li class="nav-item mx-1 mx-3">
+						<a href='home' class="text-decoration-none text-white">Home</a>
+					</li>
+					<li class="nav-item mx-1 mx-3">
+						<a href='about' class="text-decoration-none text-white">About</a>
+					</li>
+					<li class="nav-item mx-1 mx-3">
+						<a href='services' class="text-decoration-none text-white">Services</a>
+					</li>
+					<li class="nav-item mx-1 mx-3">
+						<a href='projects' class="text-decoration-none text-white">Projects</a>
+					</li>
+					<li class="nav-item mx-1 mx-3">
+						<a href='contact' class="text-decoration-none text-white">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img src="https://comradeweb.com/wp-content/uploads/2022/06/The-Best-Shoe-eCommerce-Website-Designs.jpg" class="d-block" style="height: 650px; width: 120%; object-fit: cover; left: 20%;" alt="...">
+				<div class="d-none d-md-block text-white" style="position: absolute; top: 100px; left: 100px;">
+        			<h1 style="font-size: 100px; font-style: italic; font-weight: bold;">CAMPUS</h1>
+        			<h1 style="font-size: 70px; font-style: italic; font-weight: bold;">Shoes</h1>
+      			</div>
+			</div>
+			<div class="carousel-item">
+				<img src="https://images.unsplash.com/photo-1485736231968-0c8ad5c9e174?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" alt="..." style="height: 650px; width: 100%; object-fit: cover;">
+				<div class="d-none d-md-block text-white text-end" style="position: absolute; top: 150px; left: 900px;">
+        			<h1 style="font-size: 60px; font-style: italic; font-family: 'Brush Script MT', cursive;">Exlusive Offer</h1>
+        			<h1 style="font-size: 100px; font-weight: bold;">FLAT</h1>
+        			<h1 style="font-size: 120px; font-weight: bold;">50% OFF</h1>
+      			</div>
+			</div>
+			<div class="carousel-item">
+				<img src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="d-block w-100" style="height: 650px; width: 120%; object-fit: cover;" alt="...">
+				<div class="d-none d-md-block text-white text-end" style="position: absolute; top: 100px; left: 1000px;">
+        			<h1 style="font-size: 60px; font-style: italic;">Sass it up</h1>
+        			<h1 style="font-size: 60px; font-style: italic;">with Campus</h1>
+      			</div>
+			</div>
+		</div>
+		<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Previous</span>
+		</button>
+		<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="visually-hidden">Next</span>
+		</button>
+	</div>
+	<div class="container-fluid my-4">
+		<div class="row">
+			<div class="col text-center fs-3">
+				BESTSELLERS
+			</div>
+		</div>
+		<div class="row">
+			<div class="col text-center my-2">
+				<a href="#" style="color: inherit;">View all</a>
+			</div>
+		</div>
+		<div class="row my-2">
+			<div class="col-3">
+				<div class="card">
+					<img src="https://www.campusshoes.com/cdn/shop/products/CAD_22G-432_L.GRY_2_460x.jpg?v=1705649828" style="height: 280px; object-fit: cover;" class="card-img-top" alt="...">
+					<span class="badge text-bg-danger p-2" style="position: absolute; top: 0; left: 0; font-size: 15px;">20% OFF</span>
+					<span style="position: absolute; top: 0; left: 320px;"><i class="bi bi-heart" style="font-size: 25px; cursor: pointer;" onclick="like(this.id)" id="like1" fill="red"></i></span>
+					<div class="card-body">
+						<p class="card-text" style="font-size: 19px;">CAD Grey Men's Running Shoes</p>
+						<p class="card-text" style="font-size: 19px;">Rs. 929.00 <span style="text-decoration: line-through; color: grey; font-size: 15px;">Rs. 1119.00</span><span style="color: red; font-size: 18px;" class="ms-2 align-top">Sale</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="card">
+					<img src="https://www.campusshoes.com/cdn/shop/files/FIRST_11G-787_WHT-SIL-B.ORG_2_460x.jpg?v=1705644649" style="height: 230px; object-fit: cover;" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text" style="font-size: 19px;">FIRST White Men's Running Shoes</p>
+						<p class="card-text" style="font-size: 19px;">Rs. 779.00 <span style="text-decoration: line-through; color: grey; font-size: 15px;">Rs. 999.00</span><span style="color: red; font-size: 15px;" class="ms-2">Sale</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="card">
+					<img src="https://www.campusshoes.com/cdn/shop/products/ROYCE-2_CG-248_BLU-SKY_2_460x.jpg?v=1705644726" style="height: 230px; object-fit: cover;" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text" style="font-size: 19px;">ROYCE-2 Blue Men's Running Shoes</p>
+						<p class="card-text" style="font-size: 19px;">Rs. 1099.00 <span style="text-decoration: line-through; color: grey; font-size: 15px;">Rs. 1299.00</span><span style="color: red; font-size: 15px;" class="ms-2">Sale</span></p>
+					</div>
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="card">
+					<img src="https://www.campusshoes.com/cdn/shop/products/ROYCE-2_CG-248_GRY-RST_2_460x.jpg?v=1705644749" style="height: 230px; object-fit: cover;" class="card-img-top" alt="...">
+					<div class="card-body">
+						<p class="card-text" style="font-size: 19px;">CAD Grey Men's Running Shoes</p>
+						<p class="card-text" style="font-size: 19px;">Rs. 929.00 <span style="text-decoration: line-through; color: grey; font-size: 15px;">Rs. 1119.00</span><span style="color: red; font-size: 15px;" class="ms-2">Sale</span></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		function like(i){
+			likeButton=document.getElementById(i);
+			if(likeButton.style.backgroundColor=='white'){
+				likeButton.style.color='red';
+			}
+			else{
+				likeButton.style.color='blue';
+			}
+		}
+	</script>
+</body>
+</html>

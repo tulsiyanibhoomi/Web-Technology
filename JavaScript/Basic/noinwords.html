@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Number in words</title>
+</head>
+<body>
+	<h1>Number in Words</h1>
+	<script type="text/javascript">
+		let n=parseInt(prompt("Enter any number(0-999): "));
+		if(n<0||n>999){
+			document.write(n+": Out Of Range");
+		}
+		else if(n>=0&&n<=999){
+			ones=["One","Two","Three","Four","Five","Six","Seven","Eight","Nine"];
+			teens=["Ten","Eleven","Twelve","Thirteen","Fourteen","Fifteen","Sixteen","Seventeen","Eighteen","Nineteen"];
+			tens=["Twenty","Thirty","Forty","Fifty","Sixty","Seventy","Eighty","Ninety"];
+			ans='';
+			document.write(n+": ");
+			if(n>=100){
+				a=parseInt(n/100);
+				ans+=ones[a-1]+" Hundred ";
+				n=n%100;
+			}
+			if(n>=10&&n<=19){
+				c=n%10;
+				ans+=teens[c];
+				document.write(ans);
+			}
+			if(n>=20){
+				b=parseInt(n/10);
+				ans+=tens[b-2]+" ";
+				n=n%10;
+			}
+			if(n<10){
+				ans+=ones[n-1];
+				document.write(ans);
+			}
+		}
+		else{
+			document.write(n+": Not a Number");
+		}
+	</script>
+</body>
+</html>

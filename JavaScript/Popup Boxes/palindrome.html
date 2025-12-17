@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Palindrome</title>
+</head>
+<body>
+	<h1>Palindrome Number Detector</h1>
+	<script type="text/javascript">
+		let n=prompt("Enter any number: ");
+		if(n<0){
+			alert(n+" is Not a Palindrome Number");
+		}else{
+			let rev=0;
+			let b=n;
+			while(b!=0){
+				rem=b%10;
+				rev=rev*10+rem;
+				b=parseInt(b/10);
+			}
+			if(n==rev){
+				alert(n+" is an Palindrome Number");
+			}else{
+				alert(n+" is Not an Palindrome Number");
+			}
+		}
+	</script>
+</body>
+</html>

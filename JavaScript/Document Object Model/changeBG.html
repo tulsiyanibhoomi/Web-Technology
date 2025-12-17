@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Background</title>
+</head>
+<body>
+	<h1>Change Background Color</h1>
+	<button onclick="change()" style="padding: 15px; font-size: 15px;">Change</button>
+	<script type="text/javascript">
+		let body=document.querySelector('body');
+		function change(){
+			a=Math.random()*255;
+			b=Math.random()*255;
+			c=Math.random()*255;
+			body.style.backgroundColor="rgb("+a+","+b+","+c+")";
+		}
+	</script>
+</body>
+</html>

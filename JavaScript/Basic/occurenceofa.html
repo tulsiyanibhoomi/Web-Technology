@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Occurence of 'a'</title>
+</head>
+<body>
+	<h1>Substring between 1st and last occurence of 'a'</h1>
+	<script type="text/javascript">
+		s=prompt("Enter any word: ");
+		let a=s.indexOf('a');
+		let b=s.lastIndexOf('a');
+		ans=s.substring(a+1,b);
+		document.write(s+" -> "+ans);
+	</script>
+</body>
+</html>
